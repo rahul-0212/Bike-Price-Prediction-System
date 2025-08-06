@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prediction History - BikeQ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary-neon: #2df8ff;
+      --bg-dark: #101014;
+      --section-bg: rgba(20, 20, 25, 0.92);
+      --text-light: #fff;
+      --text-muted: #bbb;
+      --border-neon: 1.5px solid #2d5eff66;
+      --neon-shadow: 0 0 12px #2d42ff, 0 0 24px #2dbcff44;
+      --footer-bg: #18181c;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    .header-bar {
+      background: rgba(20, 20, 30, 0.98);
+      padding: 10px;
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      color: var(--primary-neon);
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      box-shadow: 0 2px 18px #000a, 0 1px 0 #2d4cff33;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      background: rgba(16, 16, 20, 0.98);
+      min-height: 60px;
+      box-shadow: 0 2px 18px #000a;
+    }
+
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      color: var(--primary-neon);
+      text-shadow: var(--neon-shadow);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      color: var(--text-light);
+      padding: 8px 18px;
+      border: 2px solid var(--primary-neon);
+      border-radius: 6px;
+      box-shadow: var(--neon-shadow);
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      background: var(--primary-neon);
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background: var(--section-bg);
+      border: var(--border-neon);
+      border-radius: 12px;
+      box-shadow: 0 2px 18px #000a;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      color: var(--primary-neon);
+      font-size: 2.5rem;
+      text-shadow: var(--neon-shadow);
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: var(--text-light);
+    }
+
+    th, td {
+      padding: 14px;
+      text-align: center;
+      border: 1px solid #333;
+    }
+
+    th {
+      background-color: #2de6ff22;
+      color: var(--primary-neon);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    tr:hover {
+      background-color: rgba(255, 45, 45, 0.1);
+    }
+
+    .footer {
+      background: var(--footer-bg);
+      color: var(--text-muted);
+      text-align: center;
+      padding: 30px 15px 15px 15px;
+      margin-top: 60px;
+      font-size: 1rem;
+      box-shadow: 0 -2px 18px #000a, 0 -1px 0 #ff2d2d33;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+      }
+
+      th, td {
+        font-size: 0.9rem;
+        padding: 8px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        margin: 20px 10px;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-bar">
+    📊 Prediction History – Know Your Past Insights
+  </div>
+
+  <nav class="navbar">
+    <div class="logo">BikeQ</div>
+    <div class="nav-links">
+      <a href="/" class="neon-btn">HOME</a>
+      <a href="project" class="neon-btn">MY PROJECT</a>
+      <a href="contact" class="neon-btn">CONTACT US</a>
+      <a href="history" class="neon-btn">PREDICTION HISTORY</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Prediction History</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Brand</th>
+          <th>Owner</th>
+          <th>Age (years)</th>
+          <th>Power (cc)</th>
+          <th>KMs Driven</th>
+          <th>Predicted Price (₹)</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in history %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td>{{ row.brand_name }}</td>
+          <td>{{ row.owner }}</td>
+          <td>{{ row.age }}</td>
+          <td>{{ row.power }}</td>
+          <td>{{ row.kms_driven }}</td>
+          <td>{{ row.prediction }}</td>
+          <td>{{ row.date }}</td>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="8">No prediction history available.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <footer class="footer">
+    &copy; 2025 BikeQ – All rights reserved. | Built with 🚀 by the BikeQ Team
+  </footer>
+
+</body>
+</html>

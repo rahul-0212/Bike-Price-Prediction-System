@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - BikeQ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary-neon: #2df8ff;
+      --bg-dark: #101014;
+      --text-light: #fff;
+      --text-muted: #ccc;
+      --section-bg: rgba(20, 20, 25, 0.92);
+      --footer-bg: #18181c;
+      --neon-shadow: 0 0 12px #2dceff, 0 0 24px #2d88ff44;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Rajdhani', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .header-bar {
+      text-align: center;
+      padding: 10px 0;
+      background: rgba(20, 20, 30, 0.98);
+      color: var(--primary-neon);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      box-shadow: 0 2px 18px #000a, 0 1px 0 #2d30ff33;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      background: rgba(16, 16, 20, 0.98);
+      min-height: 60px;
+      box-shadow: 0 2px 18px #000a;
+    }
+
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      color: var(--primary-neon);
+      text-shadow: var(--neon-shadow);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      color: var(--text-light);
+      padding: 8px 18px;
+      border: 2px solid var(--primary-neon);
+      border-radius: 6px;
+      box-shadow: var(--neon-shadow);
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      background: var(--primary-neon);
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      background: var(--section-bg);
+      border-radius: 12px;
+      border: 1.5px solid #222;
+      box-shadow: 0 2px 18px #000a;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--primary-neon);
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: var(--neon-shadow);
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .footer {
+      background: var(--footer-bg);
+      color: var(--text-muted);
+      text-align: center;
+      padding: 30px 15px 15px 15px;
+      margin-top: 60px;
+      border-top: 1px solid #222;
+      font-size: 1rem;
+      box-shadow: 0 -2px 18px #000a, 0 -1px 0 #2d65ff33;
+    }
+
+    .footer .socials {
+      margin: 12px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .footer .socials a {
+      color: var(--primary-neon);
+      font-size: 1.3rem;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        margin: 20px 10px;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-bar">
+    ⚡ Dive into the future of bike price prediction!
+  </div>
+
+  <nav class="navbar">
+    <div class="logo">BikeQ</div>
+    <div class="nav-links">
+      <a href="/" class="neon-btn">HOME</a>
+      <a href="project" class="neon-btn">MY PROJECT</a>
+      <a href="contact" class="neon-btn">CONTACT US</a>
+      <a href="history" class="neon-btn">PREDICTION HISTORY</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>About BikeQ</h1>
+    <p>
+      <strong>BikeQ</strong> is a futuristic AI-powered web platform designed to help users estimate the market value of their motorcycles with precision and confidence. Leveraging modern web technologies and advanced machine learning algorithms, BikeQ ensures accurate price predictions based on various factors such as brand, power, age, ownership, and kilometers driven.
+    </p>
+
+    <p>
+      We believe that knowing your bike’s value shouldn’t be a guessing game. Whether you are selling your two-wheeler or planning to buy a used one, BikeQ empowers you with data-driven insights. Our aim is to bring transparency and clarity to bike resale pricing through innovation, simplicity, and a seamless user experience.
+    </p>
+
+    <p>
+      The platform is built with love by passionate developers who are not just tech enthusiasts but also avid bikers. Every visual element, from the glowing red neon theme to the responsive interface, has been crafted to reflect the thrill, power, and beauty of motorcycles.
+    </p>
+
+    <p>
+      We are committed to continuously improving BikeQ by integrating more features, expanding prediction accuracy with larger datasets, and offering multilingual support for a wider audience. Stay tuned as we ride forward into the future of smart two-wheeler valuation!
+    </p>
+  </div>
+
+  <footer class="footer">
+    <div>&copy; 2025 BikeQ - All Rights Reserved</div>
+    <div class="socials">
+      <a href="https://instagram.com/" target="_blank">Instagram</a>
+      <a href="https://wa.me/" target="_blank">WhatsApp</a>
+      <a href="https://twitter.com/" target="_blank">Twitter</a>
+      <a href="mailto:someone@example.com">Email</a>
+    </div>
+    <div>Built with ❤️ by the BikeQ Team</div>
+  </footer>
+
+</body>
+</html>
